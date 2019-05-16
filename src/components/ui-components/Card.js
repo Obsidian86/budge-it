@@ -8,10 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import SelectFields from '../ui-components/SelectFields';
 import PieChart from './PieChart';
 
-const styles = { 
-};
+import {money} from '../../helpers/format';
 
- 
+const styles = {}; 
+
 function MediaCard(props) {
   const { classes, totalBills, totalIncome, bills } = props;
 
@@ -31,11 +31,14 @@ function MediaCard(props) {
     <Card className={classes.card}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h1">
-             Your Accounts 
+             Financial breakdown 
           </Typography> 
             <SelectFields />
-            {"$" + totalBills + " $" + totalIncome}
-            <div style={{width: "500px", margin: "0 auto"}}>
+            <div>
+              Total bills: {money(totalBills)} 
+              Total income: {money(totalIncome)}
+            </div>
+            <div style={{margin: "0 auto"}}>
               <PieChart chartData={chartData} />
             </div>
         </CardContent>

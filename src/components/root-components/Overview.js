@@ -1,54 +1,31 @@
 import React from 'react';
 import Card from '../ui-components/Card';
-import {connect } from 'react-redux';
-
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 const Overview = (props) => {
-    let {income, bills} = props;
-    
-    let totalIncome = 0;
-
-    const incomeList = income.map((source, index) =>{
-        totalIncome = totalIncome + source.amount;
-        return (
-            <div key={index}>
-                {source.name}
-                {source.amount}
-            </div>
-        )
-    });
-
-    totalIncome = (totalIncome * 52)/12;
-
-    let totalBills = 0;
-    const billsList = bills.map((source, index) =>{
-        totalBills = totalBills + source.amount;
-        return (
-            <div key={index}>
-                {source.name}
-                {source.amount}
-            </div>
-        )
-    });
-
+    let { bills, totalBills, totalIncome} = props; 
     return(
-        <div>
+        <div className='overview'>
             <Card 
                 totalBills={totalBills} 
                 totalIncome={totalIncome} 
                 bills={bills}
             />
-            {totalIncome} 
-            {totalBills} 
-            {incomeList} 
-            {billsList}
+            <div>
+                <Link to="/income">Accounts</Link>
+                <Link to="/income">Income</Link>
+                <Link to="/bills">Bills</Link>
+            </div>
         </div>
     );
 }
 
 const mapStateToProps = (state) => ({
     bills: state.bills,
-    income: state.income
+    income: state.income,
+    totalBills: state.totalBills,
+    totalIncome: state.totalIncome
 });
 
 export default connect(mapStateToProps)(Overview);

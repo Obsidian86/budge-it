@@ -16,11 +16,11 @@ const PieChartComponent = (props) => {
             fontFamily: 'inherit'
         }}
         radius={42}
-        labelPosition={80}
+        labelPosition={78}
         lengthAngle={-360}
         animate
         lineWidth={8}
-        paddingAngle={5}
+        paddingAngle={0}
       />
       );
 }

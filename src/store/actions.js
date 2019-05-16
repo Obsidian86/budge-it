@@ -1,0 +1,1 @@
+export const INITIAL_APP_LOAD = "INITIAL_APP_LOAD";

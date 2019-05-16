@@ -1,0 +1,19 @@
+.mainList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 98%;
+    margin: 10px auto; 
+    padding: 7px;
+    box-shadow: 0 0 3px gray;
+    p{
+        width: 50%;
+        margin: 0;
+        padding: 2px 3px;
+        & i{
+            color: gray;
+        }
+        &:nth-child(even){
+            text-align: right;
+        }
+    }
+}
