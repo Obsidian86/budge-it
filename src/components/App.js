@@ -1,12 +1,25 @@
 import React from 'react'; 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from './ui-components/AppBar'; 
+ 
+import Overview from './root-components/Overview';
 
-function App() {
+import * as data from '../data';
+
+const App = () => { 
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>test</h1>
-      </header>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <div className="App">
+        <header className="App-header">
+          <AppBar /> 
+          <Overview data={data} />
+        </header>
+      </div>
+    </React.Fragment>
   );
 }
 
