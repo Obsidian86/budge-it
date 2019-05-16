@@ -16,25 +16,43 @@ export const income = [
 export const bills = [
     {
         name: "Rent",
-        amount: 1200,
+        amount: 1031,
         frequency: "monthly",
         date: "06/21/2019"
     },
     {
         name: "Car Note",
-        amount: 450,
+        amount: 430,
         frequency: "monthly",
         date: "06/21/2019"
     },
     {
         name: "Phone",
-        amount: 100,
+        amount: 89,
         frequency: "monthly",
         date: "06/21/2019"
     },
     {
         name: "Cable",
         amount: 52,
+        frequency: "monthly",
+        date: "06/21/2019"
+    },
+    {
+        name: "Insurance",
+        amount: 100,
+        frequency: "monthly",
+        date: "06/21/2019"
+    },
+    {
+        name: "Savings",
+        amount: 500,
+        frequency: "monthly",
+        date: "06/21/2019"
+    },
+    {
+        name: "Electricity",
+        amount: 150,
         frequency: "monthly",
         date: "06/21/2019"
     }

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea'; 
+import Card from '@material-ui/core/Card'; 
 import CardContent from '@material-ui/core/CardContent'; 
 import Typography from '@material-ui/core/Typography';
 
@@ -14,21 +13,22 @@ const styles = {
 
  
 function MediaCard(props) {
-  const { classes, totalBills, totalIncome,bills } = props;
+  const { classes, totalBills, totalIncome, bills } = props;
+
+  let colors = ["red", "green", "blue", "pink", "purple", "yellow", "orange", "brown", "teal"]
 
   let chartData = [];
-  bills.forEach(bill => {
+  bills.forEach((bill, index) => {
     let b = {
       title: bill.name,
-      value: bill.amount,
-      color: "red"
+      value: ((bill.amount / totalIncome) * 100),
+      color: colors[index]
     };
     chartData.push(b);
   }); 
   
   return (
     <Card className={classes.card}>
-      <CardActionArea> 
         <CardContent>
           <Typography gutterBottom variant="h5" component="h1">
              Your Accounts 
@@ -38,10 +38,8 @@ function MediaCard(props) {
             <div style={{width: "500px", margin: "0 auto"}}>
               <PieChart chartData={chartData} />
             </div>
-            
-          
         </CardContent>
-      </CardActionArea> 
+ 
     </Card>
   );
 }

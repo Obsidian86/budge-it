@@ -1,20 +1,25 @@
 import React from 'react';
 import PieChart from 'react-minimal-pie-chart';
 
-const PieChartComponent = (props) => {
+const PieChartComponent = (props) => { 
     return(
     <PieChart
         data={props.chartData}
-        label
+        label={(props)=>{
+            return (
+                props.data[props.dataIndex].title + " " + 
+                 (props.data[props.dataIndex].value.toFixed(2) + "%")
+                ); 
+        }}
         labelStyle={{
-            fontSize: '5px',
-            fontFamily: 'sans-serif'
+            fontSize: '3px',
+            fontFamily: 'inherit'
         }}
         radius={42}
-        labelPosition={112}
+        labelPosition={80}
         lengthAngle={-360}
         animate
-        lineWidth={15}
+        lineWidth={8}
         paddingAngle={5}
       />
       );
