@@ -38,11 +38,10 @@ function MediaCard(props) {
               Total bills: {money(totalBills)} 
               Total income: {money(totalIncome)}
             </div>
-            <div style={{margin: "0 auto"}}>
+            <div style={{margin: "0 auto", maxWidth: "900px"}}>
               <PieChart chartData={chartData} />
             </div>
-        </CardContent>
- 
+        </CardContent> 
     </Card>
   );
 }

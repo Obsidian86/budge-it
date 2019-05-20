@@ -10,11 +10,16 @@ export function* appLoaded(){
     income: datas.income
   } 
   yield delay(0);
-  yield put({ type: 'UPDATE_DATA', payload: data })
+  yield put({ type: actions.SET_UPDATE_DATA, payload: data })
+}
+
+export function* toggleDrawer(){ 
+  yield put({type: actions.SET_TOGGLE_DRAWER});
 }
 
 export function* WATCH_APP_LOAD(){
   yield takeEvery(actions.INITIAL_APP_LOAD, appLoaded);
+  yield takeEvery(actions.TOGGLE_DRAWER, toggleDrawer);
 }
 
 export default function* rootSaga() {

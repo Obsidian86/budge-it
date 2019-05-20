@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from '../ui-components/Card';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import Card from '../ui-components/Card'; 
 
 const Overview = (props) => {
     let { bills, totalBills, totalIncome} = props; 
@@ -16,7 +16,7 @@ const Overview = (props) => {
                 <Link to="/income">Accounts</Link>
                 <Link to="/income">Income</Link>
                 <Link to="/bills">Bills</Link>
-            </div>
+            </div> 
         </div>
     );
 }

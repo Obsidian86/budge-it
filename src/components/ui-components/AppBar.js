@@ -10,6 +10,8 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
+import {connect} from 'react-redux';
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -76,7 +78,9 @@ function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" color="inherit" style={{backgroundColor: "#c3c3c3"}}>
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+          <IconButton 
+            onClick={()=> props.dispatch({type: "TOGGLE_DRAWER"})}
+            className={classes.menuButton} color="inherit" aria-label="Open drawer">
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
@@ -105,4 +109,6 @@ SearchAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SearchAppBar);
+
+
+export default connect()(withStyles(styles)(SearchAppBar));

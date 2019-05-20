@@ -6,6 +6,7 @@ import * as actions from '../store/actions';
 import Overview from './root-components/Overview'; 
 import IncomeList from './root-components/IncomeList';
 import {Route, BrowserRouter as Router} from 'react-router-dom';
+import Drawer from '../components/ui-components/Drawer';
 
 class App extends Component{   
   componentWillMount(){
@@ -19,6 +20,7 @@ class App extends Component{
         <CssBaseline />
         <Router>
           <div className="App">
+            <Drawer visible={true} />
             <header className="App-header">
               <AppBar />  
             </header>

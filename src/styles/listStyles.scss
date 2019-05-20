@@ -1,19 +1,34 @@
-.mainList{
-    display: flex;
-    flex-wrap: wrap;
-    width: 98%;
-    margin: 10px auto; 
-    padding: 7px;
-    box-shadow: 0 0 3px gray;
-    p{
-        width: 50%;
-        margin: 0;
-        padding: 2px 3px;
-        & i{
-            color: gray;
+.mainList{ 
+    padding: 10px;
+    .MuiPaper-root-18{  
+        margin-bottom: 20px; 
+        & div{
+            display: flex;
+            flex-wrap: wrap;
+            & * { 
+                width: 50%;
+                padding: 0;
+                margin: 0;
+                &:nth-child(even){
+                    text-align: right;
+                }
+            }
+            & i{
+                color: gray;
+            }
         }
-        &:nth-child(even){
-            text-align: right;
+    }
+    .display-list-item{ 
+        margin-bottom: 12px;
+        & div{
+            display: flex;
+            flex-wrap: wrap;
+            & :nth-child(even){
+                text-align: right;
+            }
+            & h2, & p{ 
+                width: 50%;
+            }
         }
     }
 }
