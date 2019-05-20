@@ -2,6 +2,8 @@ import * as actions from '../actions';
 
 const defaultState = {
     totalBills: 0,
+    totalIncome: 0,
+    accounts: [],
     bills: [],
     income: [],
     drawer: false

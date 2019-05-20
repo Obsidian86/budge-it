@@ -7,6 +7,8 @@ import Overview from './root-components/Overview';
 import IncomeList from './root-components/IncomeList';
 import {Route, BrowserRouter as Router} from 'react-router-dom';
 import Drawer from '../components/ui-components/Drawer';
+import billsList from './root-components/billsList';
+import accountsList from './root-components/accountsList';
 
 class App extends Component{   
   componentWillMount(){
@@ -25,7 +27,10 @@ class App extends Component{
               <AppBar />  
             </header>
             <Route exact path="/" component={Overview}></Route> 
+            <Route path="/dash" component={Overview}></Route> 
+            <Route path="/bills" component={billsList}></Route> 
             <Route path="/income" component={IncomeList}></Route> 
+            <Route path="/accounts" component={accountsList}></Route> 
           </div>
         </Router>
       </React.Fragment>

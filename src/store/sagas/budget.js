@@ -7,7 +7,8 @@ const delay = (ms) => new Promise(res => setTimeout(res, ms))
 export function* appLoaded(){ 
   let data = {
     bills: datas.bills,
-    income: datas.income
+    income: datas.income,
+    accounts: datas.accounts
   } 
   yield delay(0);
   yield put({ type: actions.SET_UPDATE_DATA, payload: data })

@@ -15,7 +15,7 @@ const styles = {};
 function MediaCard(props) {
   const { classes, totalBills, totalIncome, bills } = props;
 
-  let colors = ["red", "green", "blue", "pink", "purple", "yellow", "orange", "brown", "teal"]
+  let colors = ["red", "green", "blue", "pink", "purple", "gray", "orange", "brown", "teal", "brown", "salmon", "black", "green"]
 
   let chartData = [];
   bills.forEach((bill, index) => {

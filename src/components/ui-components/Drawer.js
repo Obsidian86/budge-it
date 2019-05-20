@@ -26,7 +26,7 @@ class TemporaryDrawer extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          {["income", "bills", "accounts"].map((text, index) => (
+          {["dash", "income", "bills", "accounts"].map((text, index) => (
             <ListItem button key={text}> 
              
               <Link to={"/" + text} ><ListItemText>{text}</ListItemText></Link>
